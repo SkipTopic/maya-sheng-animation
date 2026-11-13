@@ -1,0 +1,2 @@
+﻿shot_id,start_frame,end_frame,dur_frames,dur_sec,shot_size,subject,speaker,listeners,action,camera_move,foreground,axis,dialogue,props,reference_frames,source,status,notes
+S001,1,48,48,2.00,近景,,,,,,,,,,,planned,Replace this example with actual reference analysis

@@ -1,0 +1,71 @@
+{
+ "scene": "",
+ "modified": true,
+ "maya_version": "2024",
+ "linear_unit": "cm",
+ "time_unit": "film",
+ "playback": {
+  "min": 1.0,
+  "max": 58.0,
+  "animation_start": 1.0,
+  "animation_end": 58.0
+ },
+ "references": [],
+ "unknown_nodes": [],
+ "assemblies": [
+  "persp",
+  "top",
+  "front",
+  "side"
+ ],
+ "blend_shapes": [],
+ "delta_mush": [],
+ "ik_handles": [],
+ "constraints": [],
+ "animation_curves": [],
+ "sdef_named_nodes": [],
+ "note": "Scene facts are not visual proof. Render and reopen the saved scene for acceptance.",
+ "file_textures": [],
+ "meshes": [],
+ "joint_count": 0,
+ "joint_names": [],
+ "requested_joints": {},
+ "cameras": [
+  {
+   "transform": "|front",
+   "shape": "|front|frontShape",
+   "focal_length": 35.0,
+   "orthographic": true,
+   "near_clip": 0.1,
+   "far_clip": 10000.0
+  },
+  {
+   "transform": "|persp",
+   "shape": "|persp|perspShape",
+   "focal_length": 34.99999999999999,
+   "orthographic": false,
+   "near_clip": 0.1,
+   "far_clip": 10000.0
+  },
+  {
+   "transform": "|side",
+   "shape": "|side|sideShape",
+   "focal_length": 35.0,
+   "orthographic": true,
+   "near_clip": 0.1,
+   "far_clip": 10000.0
+  },
+  {
+   "transform": "|top",
+   "shape": "|top|topShape",
+   "focal_length": 35.0,
+   "orthographic": true,
+   "near_clip": 0.1,
+   "far_clip": 10000.0
+  }
+ ],
+ "animated_nodes": [],
+ "visible_model_panels": [
+  "modelPanel4"
+ ]
+}

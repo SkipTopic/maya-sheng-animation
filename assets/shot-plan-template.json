@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "project_name": "",
+  "fps": "24000/1001",
+  "resolution": [854, 480],
+  "shots": [
+    {
+      "id": "S001",
+      "start": 1,
+      "end": 48,
+      "shot_size": "近景",
+      "subject": "",
+      "speaker": "",
+      "listeners": [],
+      "foreground": "",
+      "axis": "",
+      "reference_frames": [],
+      "camera": {
+        "name": "",
+        "actual_maya_name": "",
+        "eye_start": [],
+        "aim_start": [],
+        "eye_end": [],
+        "aim_end": [],
+        "focal_length": null,
+        "near_clip": 5.0,
+        "far_clip": 2200.0,
+        "notes": ""
+      },
+      "head_action": [],
+      "hand_action": [],
+      "body_action": [],
+      "prop_action": [],
+      "allowed_scope": [],
+      "forbidden_scope": [],
+      "requires_user_confirmation": [],
+      "review_status": "pending",
+      "review_evidence": [],
+      "notes": ""
+    }
+  ]
+}

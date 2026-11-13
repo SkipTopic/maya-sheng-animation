@@ -1,0 +1,53 @@
+{
+ "ok": true,
+ "shotlist": {
+  "file": "C:\\Users\\admin\\AppData\\Local\\Temp\\1\\maya_sheng_host_test_nh8e_95w\\shotlist.csv",
+  "valid": true,
+  "errors": [],
+  "warnings": [],
+  "shots": 1,
+  "fps": 24.0,
+  "first_start": 1,
+  "last_end": 3,
+  "total_frames": 3,
+  "duration_seconds": 0.125
+ },
+ "sequence": {
+  "frames_dir": "C:\\Users\\admin\\AppData\\Local\\Temp\\1\\maya_sheng_host_test_nh8e_95w\\frames",
+  "shotlist": "C:\\Users\\admin\\AppData\\Local\\Temp\\1\\maya_sheng_host_test_nh8e_95w\\shotlist.csv",
+  "valid": true,
+  "errors": [],
+  "warnings": [],
+  "shotlist_shots": 1,
+  "expected_frames": 3,
+  "actual_frames": 3,
+  "missing_frames": [],
+  "unexpected_frames": [],
+  "unique_frame_hashes": 3,
+  "duplicate_frame_groups": [],
+  "per_shot": [
+   {
+    "shot_id": "S001",
+    "start": 1,
+    "end": 3,
+    "expected": 3,
+    "present": 3
+   }
+  ],
+  "png_sizes": {
+   "1": [
+    32,
+    24
+   ],
+   "2": [
+    32,
+    24
+   ],
+   "3": [
+    32,
+    24
+   ]
+  },
+  "note": "Duplicate frames may be valid in static shots; review duplicate groups and shot boundaries visually."
+ }
+}

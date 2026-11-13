@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "MayaMCP": {
+      "type": "stdio",
+      "command": "C:/full/path/MayaMCP/.venv/Scripts/python.exe",
+      "args": [
+        "C:/full/path/MayaMCP/src/maya_mcp_server.py"
+      ]
+    }
+  }
+}

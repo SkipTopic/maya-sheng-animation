@@ -1,0 +1,75 @@
+{
+ "ok": true,
+ "camera": "TMP_SHENG_TEST_CAMERA1",
+ "move": {
+  "camera": "TMP_SHENG_TEST_CAMERA1",
+  "start": 1,
+  "end": 3,
+  "endpoints": [
+   {
+    "frame": 1,
+    "eye": [
+     100.0,
+     55.0,
+     100.0
+    ],
+    "aim": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rotation": [
+     -21.251492955248192,
+     45.0,
+     2.248991783197472e-15
+    ]
+   },
+   {
+    "frame": 3,
+    "eye": [
+     112.0,
+     62.0,
+     108.0
+    ],
+    "aim": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "rotation": [
+     -21.726551770131113,
+     46.041626676009976,
+     0.0
+    ]
+   }
+  ],
+  "eye_motion_distance": 16.0312195418814,
+  "aim_motion_distance": 0.0
+ },
+ "shot": {
+  "camera": "TMP_SHENG_TEST_CAMERA1",
+  "activation": {
+   "panel": "modelPanel4",
+   "camera": "|TMP_SHENG_TEST_CAMERA1"
+  },
+  "start": 1,
+  "end": 3,
+  "expected_frames": 3,
+  "actual_frames": 3,
+  "files": [
+   "C:\\Users\\admin\\Desktop\\MayaProject\\全流程 Skill\\maya-sheng-animation\\tests\\camera_frames\\S001.0001.png",
+   "C:\\Users\\admin\\Desktop\\MayaProject\\全流程 Skill\\maya-sheng-animation\\tests\\camera_frames\\S001.0002.png",
+   "C:\\Users\\admin\\Desktop\\MayaProject\\全流程 Skill\\maya-sheng-animation\\tests\\camera_frames\\S001.0003.png"
+  ],
+  "returned": "C:\\Users\\admin\\Desktop\\MayaProject\\全流程 Skill\\maya-sheng-animation\\tests\\camera_frames\\S001.####.png",
+  "width": 427,
+  "height": 240,
+  "ok": true
+ },
+ "image_hashes": [
+  "ad21c7f8461f8c623f0c6e359ea62a79dcc7acbfba025a22ed029a878422d8fa",
+  "1cfed74716dc740fb3927040e1e0aeaa148f45cfbbb3f64a97c0b80869ce5b68",
+  "21641f6ef6a726458fa830e2e411196f826d0a6555292f6605bf66df58df3bbb"
+ ],
+ "temporary_aim_helpers_left": []
+}

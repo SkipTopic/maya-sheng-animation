@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "project_name": "",
+  "display_name": "",
+  "user_request": "",
+  "maya": {
+    "executable_path": "",
+    "version": "",
+    "mcp_name": "MayaMCP",
+    "mcp_project_path": "",
+    "client_config_path": "",
+    "connection_verified": false
+  },
+  "characters": [
+    {
+      "name": "",
+      "model_path": "",
+      "format": "",
+      "has_skeleton": false,
+      "has_skin": false,
+      "has_morphs": false,
+      "notes": ""
+    }
+  ],
+  "references": {
+    "video_paths": [],
+    "image_paths": [],
+    "storyboard_path": "",
+    "script_or_dialogue_path": ""
+  },
+  "timeline": {
+    "fps": "24000/1001",
+    "start_frame": 1,
+    "end_frame": null,
+    "duration_seconds": null
+  },
+  "action_scope": {
+    "allowed": [],
+    "forbidden": [],
+    "requires_user_confirmation": []
+  },
+  "delivery": {
+    "resolution": null,
+    "renderer": "playblast",
+    "include_subtitles": false,
+    "include_original_audio": false,
+    "output_directory": "",
+    "requires_still_approval": true,
+    "requires_short_segment_approval": true,
+    "requires_full_render_approval": true
+  },
+  "resources": {
+    "memory_gb": null,
+    "disk_free_gb": null,
+    "download_policy": "ask_before_download",
+    "auto_update_allowed": false
+  },
+  "credentials": "Never store credentials or tokens in this file."
+}
