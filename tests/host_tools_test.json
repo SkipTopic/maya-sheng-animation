@@ -1,7 +1,7 @@
 {
  "ok": true,
  "shotlist": {
-  "file": "C:\\Users\\admin\\AppData\\Local\\Temp\\1\\maya_sheng_host_test_nh8e_95w\\shotlist.csv",
+  "file": "C:\\Users\\admin\\AppData\\Local\\Temp\\1\\maya_sheng_host_test_tu6bm4r5\\shotlist.csv",
   "valid": true,
   "errors": [],
   "warnings": [],
@@ -12,9 +12,26 @@
   "total_frames": 3,
   "duration_seconds": 0.125
  },
+ "merge": {
+  "valid": true,
+  "shotlist": "C:\\Users\\admin\\AppData\\Local\\Temp\\1\\maya_sheng_host_test_tu6bm4r5\\shotlist.csv",
+  "raw_dir": "C:\\Users\\admin\\AppData\\Local\\Temp\\1\\maya_sheng_host_test_tu6bm4r5\\raw",
+  "output_dir": "C:\\Users\\admin\\AppData\\Local\\Temp\\1\\maya_sheng_host_test_tu6bm4r5\\frames",
+  "errors": [],
+  "shots": [
+   {
+    "shot_id": "S001",
+    "start": 1,
+    "end": 3,
+    "frames": 3
+   }
+  ],
+  "frames_written": 3,
+  "expected_frames": 3
+ },
  "sequence": {
-  "frames_dir": "C:\\Users\\admin\\AppData\\Local\\Temp\\1\\maya_sheng_host_test_nh8e_95w\\frames",
-  "shotlist": "C:\\Users\\admin\\AppData\\Local\\Temp\\1\\maya_sheng_host_test_nh8e_95w\\shotlist.csv",
+  "frames_dir": "C:\\Users\\admin\\AppData\\Local\\Temp\\1\\maya_sheng_host_test_tu6bm4r5\\frames",
+  "shotlist": "C:\\Users\\admin\\AppData\\Local\\Temp\\1\\maya_sheng_host_test_tu6bm4r5\\shotlist.csv",
   "valid": true,
   "errors": [],
   "warnings": [],
@@ -25,6 +42,8 @@
   "unexpected_frames": [],
   "unique_frame_hashes": 3,
   "duplicate_frame_groups": [],
+  "repeated_shot_first_frames": [],
+  "identical_cut_boundaries": [],
   "per_shot": [
    {
     "shot_id": "S001",

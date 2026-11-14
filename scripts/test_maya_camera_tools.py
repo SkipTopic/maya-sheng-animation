@@ -19,7 +19,8 @@ def run_test(output_path=None, frames_dir=None):
     camera = None
     sphere = None
     previous_time = cmds.currentTime(q=True)
-    report = {"ok": False}
+    previous_selection = cmds.ls(selection=True, long=True) or []
+    report = {"ok": False, "maya_version": cmds.about(version=True), "scene": cmds.file(q=True, sceneName=True)}
     try:
         before_helpers = set(cmds.ls("TMP_SHENG_CAMERA_AIM*", long=True) or [])
         sphere = cmds.polySphere(name="TMP_SHENG_TEST_SPHERE", radius=8.0)[0]
@@ -41,7 +42,8 @@ def run_test(output_path=None, frames_dir=None):
         if frames_dir is None:
             frames_dir = os.path.join(os.path.expanduser("~"), "maya_sheng_camera_test_frames")
         output_base = os.path.join(frames_dir, "S001")
-        shot = playblast_shot(camera, 1, 3, output_base, width=427, height=240, overwrite=True)
+        shot = playblast_shot(camera, 1, 3, output_base, width=427, height=240,
+                              overwrite=True, require_variation=True, restore_state=True)
         hashes = [_hash(path) for path in shot["files"]]
         report.update({
             "camera": camera,
@@ -52,6 +54,8 @@ def run_test(output_path=None, frames_dir=None):
         })
         report["ok"] = bool(
             shot["actual_frames"] == 3 and
+            shot["actual_frame_numbers"] == [1, 2, 3] and
+            shot["state_restored"] and
             len(set(hashes)) == 3 and
             move["eye_motion_distance"] > 0 and
             not report["temporary_aim_helpers_left"]
@@ -75,7 +79,11 @@ def run_test(output_path=None, frames_dir=None):
                 except Exception:
                     pass
         cmds.currentTime(previous_time)
-        cmds.select(clear=True)
+        existing_selection = [node for node in previous_selection if cmds.objExists(node)]
+        if existing_selection:
+            cmds.select(existing_selection, replace=True)
+        else:
+            cmds.select(clear=True)
         cmds.refresh(force=True)
 
     if output_path:
@@ -87,5 +95,13 @@ def run_test(output_path=None, frames_dir=None):
     return report
 
 
-if __name__ == "__maya_cmd__":
-    run_test()
+def main(output_path=None, frames_dir=None):
+    result = run_test(output_path=output_path, frames_dir=frames_dir)
+    print(json.dumps({"ok": result.get("ok"), "report": output_path}, ensure_ascii=False))
+    if not result.get("ok"):
+        raise RuntimeError("Maya camera smoke test failed; inspect %s" % output_path)
+    return result
+
+
+if __name__ in ("__main__", "__maya_cmd__"):
+    main()

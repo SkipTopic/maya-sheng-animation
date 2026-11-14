@@ -1,5 +1,7 @@
 {
  "ok": true,
+ "maya_version": "2024",
+ "scene": "",
  "camera": "TMP_SHENG_TEST_CAMERA1",
  "move": {
   "camera": "TMP_SHENG_TEST_CAMERA1",
@@ -50,12 +52,18 @@
   "camera": "TMP_SHENG_TEST_CAMERA1",
   "activation": {
    "panel": "modelPanel4",
-   "camera": "|TMP_SHENG_TEST_CAMERA1"
+   "camera": "|TMP_SHENG_TEST_CAMERA1",
+   "previous_camera": "|persp"
   },
   "start": 1,
   "end": 3,
   "expected_frames": 3,
   "actual_frames": 3,
+  "actual_frame_numbers": [
+   1,
+   2,
+   3
+  ],
   "files": [
    "C:\\Users\\admin\\Desktop\\MayaProject\\全流程 Skill\\maya-sheng-animation\\tests\\camera_frames\\S001.0001.png",
    "C:\\Users\\admin\\Desktop\\MayaProject\\全流程 Skill\\maya-sheng-animation\\tests\\camera_frames\\S001.0002.png",
@@ -64,6 +72,28 @@
   "returned": "C:\\Users\\admin\\Desktop\\MayaProject\\全流程 Skill\\maya-sheng-animation\\tests\\camera_frames\\S001.####.png",
   "width": 427,
   "height": 240,
+  "png_sizes": {
+   "S001.0001.png": [
+    427,
+    240
+   ],
+   "S001.0002.png": [
+    427,
+    240
+   ],
+   "S001.0003.png": [
+    427,
+    240
+   ]
+  },
+  "image_hashes": {
+   "S001.0001.png": "ad21c7f8461f8c623f0c6e359ea62a79dcc7acbfba025a22ed029a878422d8fa",
+   "S001.0002.png": "1cfed74716dc740fb3927040e1e0aeaa148f45cfbbb3f64a97c0b80869ce5b68",
+   "S001.0003.png": "21641f6ef6a726458fa830e2e411196f826d0a6555292f6605bf66df58df3bbb"
+  },
+  "unique_image_hashes": 3,
+  "all_frames_identical": false,
+  "state_restored": true,
   "ok": true
  },
  "image_hashes": [

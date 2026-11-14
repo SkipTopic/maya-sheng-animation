@@ -110,12 +110,31 @@ def verify_sequence(frames_dir, shotlist, fps=24.0, width=None, height=None):
             if present != end - start + 1:
                 report["errors"].append("%s has %s frames, expected %s" % (row["shot_id"], present, end - start + 1))
 
+    first_hash_groups = {}
+    for shot in per_shot:
+        digest = hashes.get(shot["start"])
+        if digest:
+            first_hash_groups.setdefault(digest, []).append(shot["shot_id"])
+    repeated_first_frames = [ids for ids in first_hash_groups.values() if len(ids) > 1]
+    for ids in repeated_first_frames:
+        report["warnings"].append("Multiple shots share identical first-frame images: %s" % ids)
+
+    identical_cut_boundaries = []
+    for previous, current in zip(per_shot, per_shot[1:]):
+        previous_hash = hashes.get(previous["end"])
+        current_hash = hashes.get(current["start"])
+        if previous_hash and previous_hash == current_hash:
+            identical_cut_boundaries.append([previous["shot_id"], current["shot_id"]])
+            report["warnings"].append("Identical image across shot cut: %s -> %s" % (previous["shot_id"], current["shot_id"]))
+
     report.update({
         "actual_frames": len(files_by_frame),
         "missing_frames": missing,
         "unexpected_frames": unexpected,
         "unique_frame_hashes": unique_hashes,
         "duplicate_frame_groups": duplicates,
+        "repeated_shot_first_frames": repeated_first_frames,
+        "identical_cut_boundaries": identical_cut_boundaries,
         "per_shot": per_shot,
         "png_sizes": {str(frame): list(size) for frame, size in sorted(sizes.items())},
         "note": "Duplicate frames may be valid in static shots; review duplicate groups and shot boundaries visually.",

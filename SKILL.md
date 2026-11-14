@@ -6,6 +6,8 @@ agent_created: true
 
 # 玛雅生动画：AI 控制 Maya 制作动画的全流程
 
+> 中英文安装指南、完整故障目录和跨 AI 运行步骤见 [README.md](README.md)。 / Read the bilingual installation guide and failure catalog in [README.md](README.md).
+
 ## 目标
 
 将人物模型、Maya 可执行文件路径、Maya MCP 配置和用户创意需求转化为可编辑、可复核、可继续接手的 Maya 动画项目。按阶段证明模型、绑定、姿态、分镜、相机、动作和最终序列真正生效，不把脚本执行成功当成视觉完成。
@@ -165,7 +167,8 @@ backups/            # 用户确认后的阶段备份
 | `scripts/inspect_maya_project.py` | 只读 Maya 场景和模型检查 |
 | `scripts/maya_camera_tools.py` | 相机创建、运动关键帧、面板切换和逐镜 playblast |
 | `scripts/validate_shotlist.py` | 分镜 CSV 结构和帧连续性验证 |
-| `scripts/verify_image_sequence.py` | 序列缺帧、重复和每镜数量验证 |
+| `scripts/merge_shot_sequences.py` | 将逐镜 playblast 安全合并为连续数字帧，校验真实帧集合与副本哈希 |
+| `scripts/verify_image_sequence.py` | 序列缺帧、重复、切镜同图和每镜数量验证 |
 | `assets/maya-mcp-config-template.json` | Maya MCP stdio 配置模板，不含凭据 |
 | `assets/project-brief-template.json` | 用户需求和交付规格模板 |
 | `assets/shotlist-template.csv` | 分镜表模板 |
@@ -182,7 +185,7 @@ maya-character-pose-recovery
 在当前示例项目中，它位于：
 
 ```text
-C:\Users\admin\Desktop\MayaProject\解决人物模型的 Skill\maya-character-pose-recovery
+<项目>\解决人物模型的 Skill\maya-character-pose-recovery
 ```
 
 该路径只是当前项目示例，不是全流程 Skill 的硬编码依赖。迁移时使用单独分发的配套 Skill，不把绝对路径写进新用户的项目。

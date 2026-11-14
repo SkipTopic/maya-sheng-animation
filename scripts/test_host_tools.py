@@ -7,6 +7,7 @@ import struct
 import tempfile
 import zlib
 from validate_shotlist import validate_file
+from merge_shot_sequences import merge_shot_sequences
 from verify_image_sequence import verify_sequence
 
 
@@ -33,15 +34,18 @@ def run_test(output_path=None):
             fh.write("S001,1,3,3,0.125,近景,test,static\n")
         shot_report = validate_file(shotlist, fps=24.0, expect_shots=1, expect_total=3)
 
+        raw = os.path.join(temp, "raw")
         frames = os.path.join(temp, "frames")
-        os.makedirs(frames)
+        os.makedirs(raw)
         for frame, color in enumerate(((255, 0, 0), (0, 255, 0), (0, 0, 255)), start=1):
-            write_png(os.path.join(frames, "%04d.png" % frame), 32, 24, color)
+            write_png(os.path.join(raw, "S001.%04d.png" % frame), 32, 24, color)
+        merge_report = merge_shot_sequences(shotlist, raw, frames, fps=24.0)
         sequence_report = verify_sequence(frames, shotlist, fps=24.0, width=32, height=24)
 
     report = {
-        "ok": bool(shot_report["valid"] and sequence_report["valid"] and sequence_report["unique_frame_hashes"] == 3),
+        "ok": bool(merge_report["valid"] and shot_report["valid"] and sequence_report["valid"] and sequence_report["unique_frame_hashes"] == 3),
         "shotlist": shot_report,
+        "merge": merge_report,
         "sequence": sequence_report,
     }
     if output_path is None:

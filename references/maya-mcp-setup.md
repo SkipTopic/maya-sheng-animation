@@ -104,9 +104,9 @@ pip install -r requirements.txt
   "mcpServers": {
     "MayaMCP": {
       "type": "stdio",
-      "command": "C:\\Users\\admin\\Tools\\MayaMCP\\.venv\\Scripts\\python.exe",
+      "command": "C:\\Users\\<用户>\\Tools\\MayaMCP\\.venv\\Scripts\\python.exe",
       "args": [
-        "C:\\Users\\admin\\Tools\\MayaMCP\\src\\maya_mcp_server.py"
+        "C:\\Users\\<用户>\\Tools\\MayaMCP\\src\\maya_mcp_server.py"
       ]
     }
   }
@@ -136,7 +136,7 @@ get_object_attributes
 list_objects_by_type
 ```
 
-官方 README 还列出 `create_object`、`get_object_attributes`、`set_object_attributes`、`scene_new`、`scene_save`、`select_object` 等。某些当前工具可能来自本地扩展，不要因为另一个安装缺少 `execute_python` 就伪造调用成功。
+官方 README 还列出 `create_object`、`get_object_attributes`、`set_object_attributes`、`scene_new`、`scene_save`、`select_object` 等。某些当前工具可能来自本地扩展；原版上游安装不应被假设一定包含 `execute_python` 或 `capture_viewport`。缺少通用执行/截图工具时，使用 Maya Script Editor 或审核过的本地文件通道，不要伪造调用成功。
 
 ## 6. 安全警告
 

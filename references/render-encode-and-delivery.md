@@ -65,7 +65,20 @@ frame=[f0, f1]
 
 ## 5. 连续序列核验
 
-将每镜帧按镜号和数字帧号整理为连续序列后运行：
+将每镜帧按镜号和数字帧号整理为连续序列。可使用安全合并工具：
+
+```bash
+python scripts/merge_shot_sequences.py \
+  --shotlist plans/shotlist.csv \
+  --raw-dir frames/v01/raw \
+  --output-dir frames/v01/continuous \
+  --fps 24000/1001 \
+  --report logs/merge_validation.json
+```
+
+该工具先核对每镜真实帧集合，再复制为连续数字帧并校验副本哈希。默认拒绝覆盖已存在的目标帧；优先使用新目录。
+
+随后运行：
 
 ```bash
 python scripts/verify_image_sequence.py \
